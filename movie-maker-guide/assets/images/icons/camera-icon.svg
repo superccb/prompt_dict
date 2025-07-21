@@ -1,0 +1,35 @@
+<svg width="64" height="64" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cameraGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="2" dy="2" stdDeviation="3" flood-color="#000000" flood-opacity="0.2"/>
+    </filter>
+  </defs>
+  
+  <!-- Camera body -->
+  <rect x="8" y="20" width="48" height="24" rx="4" fill="url(#cameraGradient)" filter="url(#shadow)"/>
+  
+  <!-- Camera lens -->
+  <circle cx="32" cy="32" r="8" fill="#1e293b"/>
+  <circle cx="32" cy="32" r="6" fill="#475569"/>
+  <circle cx="32" cy="32" r="4" fill="#64748b"/>
+  <circle cx="32" cy="32" r="2" fill="#94a3b8"/>
+  
+  <!-- Camera grip -->
+  <rect x="56" y="24" width="4" height="16" rx="2" fill="url(#cameraGradient)"/>
+  
+  <!-- Camera top -->
+  <rect x="12" y="16" width="40" height="6" rx="2" fill="url(#cameraGradient)"/>
+  
+  <!-- Flash -->
+  <rect x="20" y="18" width="6" height="2" rx="1" fill="#fbbf24"/>
+  
+  <!-- Viewfinder -->
+  <rect x="38" y="18" width="8" height="2" rx="1" fill="#1e293b"/>
+  
+  <!-- Recording indicator -->
+  <circle cx="28" cy="20" r="1" fill="#ef4444"/>
+</svg> 
