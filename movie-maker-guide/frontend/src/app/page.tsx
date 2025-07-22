@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { Camera, Lightbulb, Music, Users, BookOpen, Play, Eye } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 const navigationItems = [
   {
@@ -51,6 +52,19 @@ const navigationItems = [
 
 export default function HomePage() {
   const [hoveredItem, setHoveredItem] = useState<string | null>(null)
+  const router = useRouter()
+
+  const handleNavigation = (path: string) => {
+    router.push(path)
+  }
+
+  const handleStartLearning = () => {
+    router.push('/moodboard')
+  }
+
+  const handleViewExamples = () => {
+    router.push('/gallery')
+  }
 
   return (
     <div className="min-h-screen gradient-bg">
@@ -94,10 +108,16 @@ export default function HomePage() {
               學習專業的電影拍攝技術，掌握視覺敘事語言，為AI生成和電影創作提供準確的場景描述
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="btn-primary text-lg px-8 py-3">
+              <button 
+                onClick={handleStartLearning}
+                className="btn-primary text-lg px-8 py-3 hover:scale-105 transition-transform"
+              >
                 開始學習
               </button>
-              <button className="btn-secondary text-lg px-8 py-3">
+              <button 
+                onClick={handleViewExamples}
+                className="btn-secondary text-lg px-8 py-3 hover:scale-105 transition-transform"
+              >
                 查看示例
               </button>
             </div>
@@ -126,7 +146,8 @@ export default function HomePage() {
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 onHoverStart={() => setHoveredItem(item.id)}
                 onHoverEnd={() => setHoveredItem(null)}
-                className="technique-card group"
+                className="technique-card group cursor-pointer"
+                onClick={() => handleNavigation(item.path)}
               >
                 <div className="flex items-center space-x-4 mb-4">
                   <div className={`w-12 h-12 rounded-lg flex items-center justify-center transition-colors duration-200 ${

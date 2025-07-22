@@ -3,6 +3,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TechniqueImage, BackgroundImage, IconImage } from '@/components/AssetImage';
+import Breadcrumb from '@/components/Breadcrumb';
 
 export default function GalleryPage() {
   const techniques = [
@@ -22,6 +23,9 @@ export default function GalleryPage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50">
       <div className="container mx-auto px-4 py-8">
+        {/* Breadcrumb */}
+        <Breadcrumb />
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

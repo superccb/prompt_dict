@@ -6,6 +6,7 @@ import { Filter, Search, Grid, List } from 'lucide-react'
 import TechniqueCard from '@/components/TechniqueCard'
 import { movieTechniques, techniquesByCategory } from '@/data/techniques'
 import { MovieTechnique } from '@/types'
+import Breadcrumb from '@/components/Breadcrumb'
 
 export default function MoodboardPage() {
   const [selectedCategory, setSelectedCategory] = useState<string>('all')
@@ -63,6 +64,9 @@ export default function MoodboardPage() {
       </header>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Breadcrumb */}
+        <Breadcrumb />
+
         {/* Filters */}
         <div className="mb-8">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between space-y-4 lg:space-y-0">
